@@ -41,22 +41,21 @@ def logout():
     conn.commit()
     conn.close()
     exit()
-'''
-def main():
-    while True:
- #       msg =
-            #####################################
-            #               0 exit              #
-            #               1 input             #
-            #               2 select            #
-            #               3 display           #
-            #               4 save              #
-            #####################################
-        print msg
-        op_list = input('Input your select:')
-        op = [logout, input_book, select, read_book, save_book]
-        op[op_list]()
-        
-
-main()
-'''
+    
+# main
+while True:
+    msg = '''
+        ##################################
+        #       Welcome to Mysql         #
+        #         L   Exit               #
+        #         A   Add                #
+        #         N   Select name        #
+        #         P   Select phone       #
+        #         D   Dispaly all        #
+        #         R   Remove record      #
+        ##################################
+    '''
+    print msg
+    option = {'A': add_book, 'N': select_name, 'P': select_phone, 'L': logout, 'D': display_all ,'R': delete_record}
+    option_list = raw_input('Please select your operation: ')
+    option[option_list]()
